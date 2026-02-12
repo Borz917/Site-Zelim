@@ -424,3 +424,17 @@ img {
   text-align: center;
   background: transparent !important;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .header-nav.open {
+    display: flex;
+  }
+}
