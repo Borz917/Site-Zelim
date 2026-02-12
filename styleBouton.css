@@ -1,0 +1,27 @@
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+  opacity: .95;
+}
+
+.btn--primary{
+  background: #0b5cff;
+  color: #fff;
+}
+
+.btn--ghost{
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.12);
+  color: #0f172a;
+}
