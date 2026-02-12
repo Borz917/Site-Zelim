@@ -33,20 +33,32 @@
 </section>
 
 <section class="container">
-<form class="form"
-      action="mailto:z.mataev@outlook.fr"
-      method="post"
-      enctype="text/plain">
+<<form action="https://formspree.io/f/xqedpqga" method="POST" class="contact-form">
 
-<input type="text" name="Nom" placeholder="Nom" required>
-<input type="email" name="Email" placeholder="Email" required>
+  <input type="text" name="name" placeholder="Nom" required>
 
-<textarea name="Message" placeholder="Votre message..." required></textarea>
+  <input type="email" name="email" placeholder="Email" required>
 
-<button type="submit">Envoyer le message</button>
+  <textarea name="message" placeholder="Votre message..." required></textarea>
 
+  <!-- Optionnel : sujet -->
+  <input type="hidden" name="_subject" value="Nouveau message depuis ton site">
+
+  <!-- Optionnel : redirection après envoi -->
+  <input type="hidden" name="_redirect" value="https://borz917.github.io/Site-Zelim/contact.html?sent=1">
+
+  <button type="submit" class="btn-send">Envoyer le message</button>
 </form>
+<p id="sent-msg" style="display:none; margin-bottom:10px; font-weight:600;">
+  ✅ Message envoyé !
+</p>
 
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("sent") === "1") {
+    document.getElementById("sent-msg").style.display = "block";
+  }
+</script>
 </section>
 
 <footer class="footer">
@@ -86,5 +98,6 @@ revealOnScroll();
 
 </body>
 </html>
+
 
 
