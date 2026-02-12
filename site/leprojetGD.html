@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleSemaine3.css">
+    <link rel="stylesheet" href="styleRetour.css">
+    <title>Semaine 3 – Game Designer</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <img src="img/logo.png" width="110">
+            <span class="site-title">Semaine 3</span>
+        </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+        <nav class="header-nav" id="nav">
+            <a href="index.html">Accueil</a>
+            <a href="leprojetGD.html" class="active">Game Designer</a>
+        </nav>
+    </header>
+
+    <main class="week3">
+
+        <!-- HERO -->
+        <section class="g-hero">
+            <div class="g-hero__text">
+                <p class="g-kicker">Semaine 3</p>
+                <h1>Game Designer</h1>
+                <p class="g-title">
+                    <span class="g-badge">🔮 TRINITY OF EYES</span>
+                    Survival horror + score attack.
+                </p>
+
+                <p class="g-sub">
+                    Objectif : survivre, vaincre des monstres et des boss, et monter le score avec la difficulté.
+                    Univers : horreur, tension, visibilité variable selon la map, progression par étages.
+                </p>
+
+                <div class="g-cta">
+                    <a class="g-btn g-btn--primary" href="leprototype.html" target="_blank" rel="noopener">Voir le
+                        prototype</a>
+                    <a class="g-btn g-btn--ghost" href="leGDD.html" target="_blank" rel="noopener">Voir le GDD</a>
+                </div>
+
+                <div class="g-tags">
+                    <span class="g-tag">Horreur</span>
+                    <span class="g-tag">Survie</span>
+                    <span class="g-tag">Score</span>
+                    <span class="g-tag">Boss</span>
+                    <span class="g-tag">Progression</span>
+                </div>
+            </div>
+
+            <!-- Media / visuels -->
+            <div class="g-hero__media">
+                <div class="g-media">
+                    <div class="g-media__top">
+                        <span class="g-media__url">TRINITY OF EYES — Preview</span>
+                    </div>
+
+                    <!-- Mets tes captures ici -->
+                    <div class="g-media__body">
+                        <img class="g-shot" src="cours/jeux.jpg" alt="" />
+                    </div>
+
+                    <div class="g-media__hint">
+                        SOON... ( jeu non terminer motif )
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRID PRINCIPAL -->
+        <section class="g-grid">
+
+            <!-- Modes -->
+            <article class="g-card">
+                <h2>🎮 Modes de jeu</h2>
+                <ul>
+                    <li><strong>Solo :</strong> survivre et faire le meilleur score</li>
+                    <li><strong>Duo local :</strong> coopération ou compétition au score</li>
+                    <li><strong>Multijoueur (optionnel) :</strong> classement global</li>
+                </ul>
+            </article>
+
+            <!-- Objectif & Score -->
+            <article class="g-card">
+                <h2>🎯 Objectif & Score</h2>
+                <p class="g-muted">Obtenir le score le plus élevé possible.</p>
+                <ul>
+                    <li>Monstres vaincus</li>
+                    <li>Temps de survie</li>
+                    <li>Pièces ramassées</li>
+                    <li>Boss vaincus</li>
+                    <li>Difficulté de la map</li>
+                </ul>
+            </article>
+
+            <!-- Caméra -->
+            <article class="g-card">
+                <h2>👁️ Caméra</h2>
+                <p>
+                    <strong>POV première personne (recommandé)</strong> : augmente l’immersion et l’horreur.
+                    La visibilité devient une mécanique (pas juste un effet visuel).
+                </p>
+                <div class="g-chiprow">
+                    <span class="g-chip">Immersion</span>
+                    <span class="g-chip">Tension</span>
+                    <span class="g-chip">Lisibilité contrôlée</span>
+                </div>
+            </article>
+
+            <!-- ZCoins & Boutique -->
+            <article class="g-card">
+                <h2>💰 ZCoins & Boutique</h2>
+                <ul>
+                    <li><strong>Gains :</strong> survie, pièces, boss (gain augmente avec le temps)</li>
+                    <li><strong>Pas de pay-to-win</strong></li>
+                    <li><strong>Boutique :</strong> uniquement cosmétique (skins, VFX, animations)</li>
+                </ul>
+            </article>
+
+        </section>
+
+        <!-- MONSTRES -->
+        <section class="g-section">
+            <div class="g-section__head">
+                <h2>👁️ Types de monstres & Boss</h2>
+                <p class="g-muted">Trois archétypes lisibles par la couleur + un boss associé.</p>
+            </div>
+
+            <div class="g-monsters">
+                <article class="g-monster g-monster--white">
+                    <h3>1) “Gentil” — Blanc</h3>
+                    <ul>
+                        <li>Apparence : blanc, yeux noirs</li>
+                        <li>Comportement : lent, attaque si provoqué</li>
+                        <li>Points : faibles</li>
+                        <li><strong>Boss :</strong> Cénos — lumière + copies faibles</li>
+                    </ul>
+                </article>
+
+                <article class="g-monster g-monster--red">
+                    <h3>2) “Méchant” — Rouge</h3>
+                    <ul>
+                        <li>Apparence : rouge, yeux blancs</li>
+                        <li>Comportement : agressif, poursuit le joueur</li>
+                        <li>Points : moyens</li>
+                        <li><strong>Boss :</strong> Karnyx — charges + zones au sol</li>
+                    </ul>
+                </article>
+
+                <article class="g-monster g-monster--black">
+                    <h3>3) “RAGE” — Noir</h3>
+                    <ul>
+                        <li>Apparence : noir, yeux rouges</li>
+                        <li>Comportement : très rapide, devient plus fort avec le temps</li>
+                        <li>Points : élevés</li>
+                        <li><strong>Boss :</strong> Nékris — noir total + attaques imprévisibles</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- MAPS -->
+        <section class="g-section">
+            <div class="g-section__head">
+                <h2>🗺️ Types de maps (horreur)</h2>
+                <p class="g-muted">La visibilité est une règle de gameplay, pas une simple ambiance.</p>
+            </div>
+
+            <div class="g-maps">
+                <div class="g-map">
+                    <h3>Map lumineuse</h3>
+                    <ul>
+                        <li>Visibilité maximale</li>
+                        <li>Monstres plus nombreux mais plus lents</li>
+                    </ul>
+                </div>
+
+                <div class="g-map">
+                    <h3>Map peu lumineuse</h3>
+                    <ul>
+                        <li>Beaucoup d’ombres</li>
+                        <li>Monstres plus discrets</li>
+                    </ul>
+                </div>
+
+                <div class="g-map">
+                    <h3>Map très sombre</h3>
+                    <ul>
+                        <li>Visibilité limitée (4–5 blocs)</li>
+                        <li>Sons / silhouettes comme indices</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRESSION -->
+        <section class="g-section">
+            <div class="g-section__head">
+                <h2>🧱 Progression & Étages</h2>
+                <p class="g-muted">Difficulté croissante + bosses clés + mode infini.</p>
+            </div>
+
+            <div class="g-timeline">
+                <div class="g-step">
+                    <div class="g-step__dot"></div>
+                    <div class="g-step__content">
+                        <h3>Étages 1 → 3</h3>
+                        <p>Maps 1 à 3 — difficulté croissante — Boss final : <strong>Cénos</strong></p>
+                    </div>
+                </div>
+
+                <div class="g-step">
+                    <div class="g-step__dot"></div>
+                    <div class="g-step__content">
+                        <h3>Étages 3 → 5</h3>
+                        <p>Maps 3 à 5 — apparition du monstre <strong>RAGE</strong> — Boss final :
+                            <strong>Karnyx</strong></p>
+                    </div>
+                </div>
+
+                <div class="g-step">
+                    <div class="g-step__dot"></div>
+                    <div class="g-step__content">
+                        <h3>Étages 5 → 6+ (infini)</h3>
+                        <p>Même map — difficulté augmente — Boss final : <strong>Nékris</strong> — survie illimitée</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="g-rule">
+                <h3>🔄 Passage au niveau suivant</h3>
+                <p>Le joueur passe à l’étage suivant en :</p>
+                <ul>
+                    <li>Tuant le monstre principal de la map</li>
+                    <li><em>ou</em> survivant un temps défini (ex : 2–5 min selon la map)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CLASSEMENT -->
+        <section class="g-section">
+            <div class="g-section__head">
+                <h2>🏆 Classement & récompenses</h2>
+                <p class="g-muted">Le score devient un outil de compétition (surtout en multi).</p>
+            </div>
+
+            <div class="g-card g-wide">
+                <ul>
+                    <li>Meilleur score = bonus temporaires</li>
+                    <li>En multi : possibilité d’infliger des malus (vision réduite, monstres plus rapides…)</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="g-footer">
+            <p>
+                <strong>Portfolio tip :</strong> Les screenshots arrivent tres bientot avec une petite + une mini vidéo (10s).
+            </p>
+        </footer>
+
+    </main>
+
+    <div class="retour-wrap">
+        <a href="cour.html" class="btn-retour">← Retour</a>
+    </div>
+</body>
+
+</html>
