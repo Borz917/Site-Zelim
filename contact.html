@@ -1,114 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Contact</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="styleRetour.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleContact.css">
 </head>
 
 <body>
 
-<header class="header">
-<div class="header-left">
-<img src="img/logo.png" width="110">
-<span class="site-title">Contact</span>
-</div>
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-left">
+      <img src="img/logo.png" width="110" alt="Logo">
+      <span class="site-title">Contact</span>
+    </div>
 
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <!-- Menu mobile -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-<nav class="header-nav" id="nav">
-<a href="index.html">Accueil</a>
-<a href="cour.html">Cours</a>
-<a href="pc.html">Parcours</a>
-<a href="cv.html">CV</a>
-<a href="contact.html" class="active">Contact</a>
-</nav>
-</header>
+    <nav class="header-nav" id="nav">
+      <a href="index.html">Accueil</a>
+      <a href="cour.html">Cours</a>
+      <a href="pc.html">Parcours</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
 
-<section class="hero">
-<h1>Me contacter</h1>
-<p>Une question ou une opportunité ? Écrivez-moi.</p>
-</section>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1>Me contacter</h1>
+    <p>Une question ou une opportunité ? Écrivez-moi.</p>
+  </section>
 
-<section class="container">
-<form action="https://formspree.io/f/xqedpqga" method="POST" class="contact-form">
+  <!-- ===== CONTENT ===== -->
+  <section class="container">
 
-  <label for="email">Ton email</label>
-  <input 
-    type="email" 
-    id="email"
-    name="email"
-    placeholder="exemple@mail.com"
-    required
-  >
+    <!-- Message envoyé (affiché si ?sent=1) -->
+    <p id="sent-msg" style="display:none; margin: 0 auto 14px; max-width:760px;">
+      ✅ Message envoyé !
+    </p>
 
-  <label for="message">Ton message</label>
-  <textarea 
-    id="message"
-    name="message"
-    rows="6"
-    placeholder="Écris ton message ici..."
-    required
-  ></textarea>
+    <form action="https://formspree.io/f/xqedpqga" method="POST" class="contact-form">
+      
+      <!-- redirection après envoi -->
+      <input type="hidden" name="_next" value="contact.html?sent=1">
 
-  <!-- Anti-spam basique (bot trap) -->
-  <input type="text" name="_gotcha" style="display:none">
+      <!-- Anti-spam basique -->
+      <input type="text" name="_gotcha" style="display:none">
 
-  <button type="submit">Envoyer le message</button>
+      <label for="email">Ton email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="exemple@mail.com"
+        required
+      >
 
-</form>
-<p id="sent-msg" style="display:none; margin-bottom:10px; font-weight:600;">
-  ✅ Message envoyé !
-</p>
+      <label for="message">Ton message</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="6"
+        placeholder="Écris ton message ici..."
+        required
+      ></textarea>
 
-<script>
-  const params = new URLSearchParams(window.location.search);
-  if (params.get("sent") === "1") {
-    document.getElementById("sent-msg").style.display = "block";
-  }
-</script>
-</section>
+      <button type="submit">Envoyer le message</button>
 
-<footer class="footer">
-<p>© 2026 – Portfolio Zelimkhan Mataev</p>
-</footer>
+    </form>
+  </section>
 
-<script>
-function toggleMenu(){
-document.getElementById("nav").classList.toggle("show");
-}
-</script>
-<script>
-function toggleMenu(){
-  document.getElementById("nav").classList.toggle("show");
-}
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2026 – Portfolio Zelimkhan Mataev</p>
+  </footer>
 
-/* Animation scroll */
-const reveals = document.querySelectorAll(".reveal");
+  <!-- ===== BTN RETOUR ===== -->
+  <button onclick="history.back()" class="btn-retour">← Retour</button>
 
-function revealOnScroll() {
-  reveals.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-
-    if (elementTop < windowHeight - 80) {
-      el.classList.add("visible");
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    function toggleMenu(){
+      document.getElementById("nav").classList.toggle("show");
     }
-  });
-}
 
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-</script>
-<button onclick="history.back()" class="btn-retour">
-← Retour
-</button>
+    // Affiche "Message envoyé" si l'URL contient ?sent=1
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("sent") === "1") {
+      document.getElementById("sent-msg").style.display = "block";
+    }
+  </script>
 
 </body>
 </html>
-
-
-
-
