@@ -1,44 +1,90 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Parcours</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="styleRetour.css">
-<link rel="stylesheet" href="styleBouton.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Parcours</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleBouton.css">
+  <link rel="stylesheet" href="styleRetour.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
 <header class="header">
-<div class="header-left">
-<img src="img/logo.png" width="110">
-<span class="site-title">Parcours</span>
-</div>
+  <div class="header-left">
+    <img src="img/logo.png" width="110" alt="logo">
+    <span class="site-title">Parcours</span>
+  </div>
 
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-<nav class="header-nav" id="nav">
-<a href="index.html">Accueil</a>
-<a href="cour.html">Cours</a>
-<a href="pc.html" class="active">Parcours</a>
-<a href="cv.html">CV</a>
-<a href="contact.html">Contact</a>
-</nav>
+  <nav class="header-nav" id="nav">
+    <a href="index.html">Accueil</a>
+    <a href="cour.html">Cours</a>
+    <a href="pc.html" class="active">Parcours</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
 <section class="container reveal">
-<div class="card reveal">Début de formation</div>
-<div class="card reveal">Apprentissage HTML/CSS</div>
-<div class="card reveal">Projets personnels</div>
+
+  <!-- ACCORDION 1 -->
+  <details class="card reveal" open>
+    <summary>Début de formation</summary>
+    <div class="pc-content">
+      <p>
+        <strong>Numérik’up – Évry-Courcouronnes</strong>
+        : découverte du web et des bases de création de sites.
+      </p>
+      <ul>
+        <li>Comprendre la structure d’un site (pages, sections, navigation)</li>
+        <li>Apprendre à organiser proprement un projet</li>
+        <li>Premiers exercices et mini-projets</li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- ACCORDION 2 -->
+  <details class="card reveal">
+    <summary>Apprentissage HTML/CSS</summary>
+    <div class="pc-content">
+      <ul>
+        <li>HTML : structure, sections, accessibilité de base</li>
+        <li>CSS : mises en page (flex/grid), cards, typographie</li>
+        <li>Responsive : adapter mobile / tablette / desktop</li>
+        <li>Déploiement : GitHub Pages</li>
+      </ul>
+
+      <div class="pc-actions">
+        <a class="btn btn--primary" href="leprojetWD.html">Voir le projet Web</a>
+        <a class="btn btn--ghost" href="cour.html">Voir mes cours</a>
+      </div>
+    </div>
+  </details>
+
+  <!-- ACCORDION 3 -->
+  <details class="card reveal">
+    <summary>Projets personnels</summary>
+    <div class="pc-content">
+      <p>
+        Je développe des projets pour progresser : création de pages portfolio et conception de jeu.
+      </p>
+      <ul>
+        <li><strong>TRINITY OF EYES</strong> : gameplay, monstres, progression, maps</li>
+        <li>Création de sprites / tests de level design</li>
+        <li>Amélioration continue : corrections, itérations, rendu plus propre</li>
+      </ul>
+
+      <div class="pc-actions">
+        <a class="btn btn--primary" href="leprojetGD.html">Voir le projet Game Design</a>
+      </div>
+    </div>
+  </details>
+
 </section>
 
-<script>
-function toggleMenu(){
-document.getElementById("nav").classList.toggle("show");
-}
-</script>
 <script>
 function toggleMenu(){
   document.getElementById("nav").classList.toggle("show");
@@ -61,9 +107,19 @@ function revealOnScroll() {
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 </script>
-<button onclick="history.back()" class="btn-retour">
+<button onclick="goBack()" class="btn-retour">
 ← Retour
 </button>
+
+<script>
+function goBack(){
+  if(history.length > 1){
+    history.back();
+  } else {
+    window.location.href = "index.html";
+  }
+}
+</script>
+
 </body>
 </html>
-
