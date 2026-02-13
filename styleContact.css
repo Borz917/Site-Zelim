@@ -1,0 +1,114 @@
+/* ===== CONTACT PAGE ===== */
+
+.hero{
+  background: linear-gradient(180deg, #0b4db3 0%, #0a3f92 100%);
+  color: #fff;
+  padding: 46px 16px;
+  text-align: center;
+}
+
+.hero h1{
+  margin: 0 0 8px;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.hero p{
+  margin: 0;
+  opacity: .92;
+  font-size: 14px;
+}
+
+/* zone centrale */
+.container{
+  padding: 40px 16px 80px;
+  background: radial-gradient(1200px 600px at 50% 0%, rgba(30, 64, 175, .10), transparent 60%);
+}
+
+/* carte formulaire */
+.contact-form{
+  max-width: 760px;
+  margin: 0 auto;
+  background: rgba(255,255,255,.97);
+  border: 1px solid rgba(15, 23, 42, .10);
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(2, 8, 23, .10);
+  padding: 22px;
+  display: grid;
+  gap: 14px;
+}
+
+.contact-form label{
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 4px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, .15);
+  background: #fff;
+  outline: none;
+  font-size: 14px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.contact-form textarea{
+  resize: vertical;
+  min-height: 160px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color: rgba(30, 64, 175, .55);
+  box-shadow: 0 0 0 4px rgba(30, 64, 175, .12);
+}
+
+/* bouton */
+.contact-form button{
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #1e40af 0%, #16378f 100%);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: .2px;
+  box-shadow: 0 10px 24px rgba(30, 64, 175, .20);
+  transition: transform .08s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+.contact-form button:hover{
+  filter: brightness(1.03);
+  box-shadow: 0 14px 30px rgba(30, 64, 175, .26);
+}
+
+.contact-form button:active{
+  transform: translateY(1px);
+}
+
+/* message envoyé */
+#sent-msg{
+  max-width: 760px;
+  margin: 12px auto 0;
+  background: rgba(16, 185, 129, .12);
+  border: 1px solid rgba(16, 185, 129, .25);
+  color: #065f46;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-weight: 800;
+}
+
+/* responsive */
+@media (max-width: 520px){
+  .contact-form{
+    padding: 16px;
+    border-radius: 16px;
+  }
+}
