@@ -82,4 +82,18 @@
     if (e.key === "Enter") send();
     if (e.key === "Escape") closePanel();
   });
+/* Disabled propre (sinon rendu bizarre selon style.css) */
+.ai-panel .ai-input input:disabled{
+  background: #f1f5f9 !important;
+  color: #64748b !important;
+  cursor: not-allowed !important;
+  opacity: 1 !important;
+}
+
+.ai-panel .ai-input button:disabled{
+  opacity: .6 !important;
+  cursor: not-allowed !important;
+}
+
+    
 })();
