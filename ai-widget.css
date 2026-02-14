@@ -95,5 +95,23 @@
   cursor: not-allowed !important;
 }
 
-    
+  /* FORCER le widget à rester flottant */
+.ai-panel{
+  position: fixed !important;
+  right: 18px !important;
+  bottom: 86px !important;
+  width: 360px !important;
+  max-width: calc(100vw - 36px) !important;
+  height: 460px !important;
+  display: none !important;
+  z-index: 999999 !important;
+}
+
+.ai-bubble{
+  position: fixed !important;
+  right: 18px !important;
+  bottom: 18px !important;
+  z-index: 999999 !important;
+}
+
 })();
