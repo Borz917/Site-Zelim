@@ -107,24 +107,25 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
-</script>
-<button onclick="goBack()" class="btn-retour">
-← Retour
-</button>
 
-<script>
-function goBack(){
-  if(history.length > 1){
-    history.back();
-  } else {
-    window.location.href = "index.html";
-  }
-}
+/* Accordéon : un seul <details> ouvert à la fois */
+const accordions = document.querySelectorAll("section.container details");
+
+accordions.forEach((d) => {
+  d.addEventListener("toggle", () => {
+    if (d.open) {
+      accordions.forEach((other) => {
+        if (other !== d) other.open = false;
+      });
+    }
+  });
+});
 </script>
-<link rel="stylesheet" href="ai-widget.css">
+
 <script src="ai-widget.js"></script>
 
 </body>
 </html>
+
 
 
