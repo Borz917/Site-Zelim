@@ -9,12 +9,12 @@
   panel.innerHTML = `
     <div class="ai-top">
       <div>Assistant IA</div>
-      <button class="ai-close">Fermer</button>
+      <button class="ai-close" type="button">Fermer</button>
     </div>
     <div class="ai-messages" id="aiMessages"></div>
     <div class="ai-input">
       <input id="aiInput" type="text" placeholder="Écris ici..." autocomplete="off" />
-      <button id="aiSend">Envoyer</button>
+      <button id="aiSend" type="button">Envoyer</button>
     </div>
   `;
 
@@ -42,12 +42,11 @@
         "🚧 Assistant IA — En cours de développement\n\nCette fonctionnalité sera bientôt disponible. Merci de votre patience 🙂",
         "ai"
       );
-      // Optionnel: on “désactive” l’input visuellement
+
+      // Désactiver sans casser le style (le CSS s’en occupe)
       input.disabled = true;
       sendBtn.disabled = true;
       input.placeholder = "Bientôt disponible…";
-      sendBtn.style.opacity = "0.6";
-      sendBtn.style.cursor = "not-allowed";
     }
   }
 
@@ -56,10 +55,16 @@
     // rien
   }
 
-  bubble.addEventListener("click", () => toggle(true));
+  // Toggle via la bulle
+  bubble.addEventListener("click", () => {
+    const isOpen = panel.style.display === "block";
+    toggle(!isOpen);
+  });
+
   closeBtn.addEventListener("click", () => toggle(false));
   sendBtn.addEventListener("click", send);
   input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") send();
+    if (e.key === "Escape") toggle(false);
   });
 })();
